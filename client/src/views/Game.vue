@@ -3,13 +3,15 @@
     <div class="userTextBox">
       <textbox></textbox>
     </div>
-    <div class="opponentsheading">
-      <h2>Opponents Progress</h2>
-    </div>
-    <div class="opponentsbox">
-      <textbox></textbox>
-      <textbox></textbox>
-      <textbox></textbox>
+    <div class="opponent">
+        <div class="opponentsheading">
+        <h3>Opponents Progress</h3>
+      </div>
+      <div class="opponentsbox">
+        <textbox></textbox>
+        <textbox></textbox>
+        <textbox></textbox>
+      </div>
     </div>
   </div>
 </template>
