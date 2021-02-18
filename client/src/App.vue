@@ -389,4 +389,10 @@ width:60%;
   width: 100%;
 }
 
+.cardInRoom{
+  margin: 10%;
+}
+.b-card {
+  box-shadow: 0px 9px 22px 7px rgba(0,0,0,0.61) !important;
+}
 </style>

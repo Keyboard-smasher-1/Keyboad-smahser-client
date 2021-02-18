@@ -1,7 +1,7 @@
 <template>
   <div class="align-container">
     <div class="userTextBox">
-      <textbox></textbox>
+      <textbox :username="username"></textbox>
     </div>
     <div class="opponent">
         <div class="opponentsheading">
@@ -20,7 +20,12 @@
 import Textbox from '../components/Textbox.vue'
 /* eslint-disable eol-last */
 export default {
-  components: { Textbox }
+  components: { Textbox },
+  computed: {
+    username () {
+      return this.$store.state.username
+    }
+  }
 }
 </script>
 

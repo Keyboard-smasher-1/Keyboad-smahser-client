@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '../views/Login.vue'
 import Game from '../views/Game.vue'
+// import Room from '../views/Room.vue'
 
 Vue.use(VueRouter)
 
@@ -16,6 +17,11 @@ const routes = [
     name: 'Game',
     component: Game
   }
+  // {
+  //   path: '/room',
+  //   name: 'Room',
+  //   component: Room
+  // }
 ]
 
 const router = new VueRouter({
@@ -30,6 +36,8 @@ router.beforeEach((to, from, next) => {
     next('/game')
   } else if (!username && to.name === 'Game') {
     next('/')
+  // } else if (!username && to.name === 'Room') {
+  //   next('/')
   } else {
     next()
   }
