@@ -1,11 +1,13 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import router from '../router'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    isLoggedIn: false
+    isLoggedIn: localStorage.getItem('username') || false,
+    username: localStorage.getItem('username')
   },
   mutations: {
     isLogin (state, payload) {
@@ -16,6 +18,11 @@ export default new Vuex.Store({
     login (context, payload) {
       localStorage.setItem('username', payload.username)
       context.commit('isLogin', true)
+    },
+    logout (context) {
+      localStorage.clear()
+      context.commit('isLogin', false)
+      router.push('/')
     }
   },
   modules: {
