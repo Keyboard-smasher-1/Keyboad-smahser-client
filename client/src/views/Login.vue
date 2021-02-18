@@ -1,8 +1,9 @@
 <template>
   <div class="wrapper fadeInDown">
-    <h1>Welcome to Keyboard Smasher!</h1>
-    <h2>are you ready?</h2>
     <div id="formContent">
+      <br>
+    <h1>Welcome to Keyboard Smasher!</h1>
+    <h5>enter your username and start playing</h5>
       <!-- Tabs Titles -->
       <!-- Icon -->
       <div class="fadeIn first">
