@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div>
-      <b-navbar toggleable="lg" type="dark" variant="info" v-if="login">
+      <b-navbar toggleable="lg" type="dark" variant="info" v-if="login" fixed="top">
         <b-navbar-brand>Keyboard Smasher</b-navbar-brand>
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
         <b-collapse id="nav-collapse" is-nav>
@@ -73,13 +73,15 @@ export default {
 
 /* BASIC */
 #login {
-  width: 300px;
+  width: 480px;
 }
 /* html {
 background-color: #56baed;
 } */
 body {
 font-family: "Poppins", sans-serif;
+background-image: url('./assets/background.png');
+background-attachment: fixed;
 }
 
 a {
@@ -117,7 +119,7 @@ border-radius: 10px 10px 10px 10px;
 background: #fff;
 padding: 30px;
 width: 90%;
-max-width: 450px;
+max-width: 600px;
 position: relative;
 padding: 0px;
 -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
@@ -323,8 +325,41 @@ outline: none;
 width:60%;
 }
 
-textarea{
+/* textarea{
   border: 2px inset blue;
   border-radius: 10px;
+} */
+
+/* textbox component style */
+.textbox{
+  background-color: #aee1e1;
+  /* height: 100vh;
+  width: 100vw; */
+  /* margin-top: 5%; */
+  border-radius: 10px;
+  padding: 10px;
+  margin: 7% 2% 5% 2%;
+  box-shadow: 3px 10px 32px 17px rgba(0,0,0,0.54)
 }
+.opponentsheading {
+  background-color: gray;
+  box-shadow: 0px 9px 22px 7px rgba(0,0,0,0.61);
+  border-radius: 10px;
+  margin: 5% 15% -5% 15%;
+  padding: 10px;
+}
+
+.opponentsbox {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 1%;
+  /* max-width: 50%; */
+}
+.opponentsbox .textbox {
+  max-width: 30%;
+  height: 10%;
+  background-color: lightgray;
+}
+
 </style>

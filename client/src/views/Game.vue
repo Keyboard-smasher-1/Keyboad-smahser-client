@@ -1,22 +1,24 @@
 <template>
-  <div>
-    <h1>Start Typing!</h1>
-    <div class="container">
-      <form action="#">
-        <br>
-        <!-- <label for="game">game</label><br> -->
-        <textarea rows = "10" cols = "70" name = "description" placeholder="type as fast as you can!">
-        </textarea><br>
-        <!-- <input type="text" cols="60" rows="5"> -->
-      </form>
+  <div class="align-container">
+    <div class="userTextBox">
+      <textbox></textbox>
+    </div>
+    <div class="opponentsheading">
+      <h2>Opponents Progress</h2>
+    </div>
+    <div class="opponentsbox">
+      <textbox></textbox>
+      <textbox></textbox>
+      <textbox></textbox>
     </div>
   </div>
 </template>
 
 <script>
+import Textbox from '../components/Textbox.vue'
 /* eslint-disable eol-last */
 export default {
-
+  components: { Textbox }
 }
 </script>
 
