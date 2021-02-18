@@ -2,7 +2,7 @@
   <div id="app">
     <div>
       <b-navbar toggleable="lg" type="dark" variant="info" v-if="login">
-        <b-navbar-brand href="#">Keyboard Smasher</b-navbar-brand>
+        <b-navbar-brand>Keyboard Smasher</b-navbar-brand>
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
         <b-collapse id="nav-collapse" is-nav>
           <!-- Right aligned nav items -->
@@ -26,8 +26,12 @@
 // import Login from './views/Login.vue'
 export default {
   name: 'App',
+  data () {
+    return {
+      // username: localStorage.getItem('username')
+    }
+  },
   components: {
-    // Login
   },
   methods: {
     logoutBtn () {
@@ -36,6 +40,7 @@ export default {
   },
   computed: {
     username () {
+      console.log(this.$store.state.username)
       return this.$store.state.username
     },
     login () {
@@ -70,11 +75,9 @@ export default {
 #login {
   width: 300px;
 }
-
-html {
-/* background-color: #56baed; */
-}
-
+/* html {
+background-color: #56baed;
+} */
 body {
 font-family: "Poppins", sans-serif;
 }
@@ -318,5 +321,10 @@ outline: none;
 
 #icon {
 width:60%;
+}
+
+textarea{
+  border: 2px inset blue;
+  border-radius: 10px;
 }
 </style>

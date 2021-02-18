@@ -8,7 +8,7 @@
       <div class="fadeIn first">
         <img src="../assets/smashed1.jpg" id="icon" alt="User Icon" />
       </div>
-      <!-- Login Form -->
+      <!-- Username Form -->
       <form>
         <input type="text" id="login" class="fadeIn second" name="login" placeholder="Enter Username" v-model="username">
         <input type="submit" class="fadeIn fourth" value="Start Smashing!" @click.prevent="loginBtn()">
