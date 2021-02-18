@@ -331,6 +331,11 @@ width:60%;
 } */
 
 /* textbox component style */
+.align-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
 .textbox{
   background-color: #aee1e1;
   /* height: 100vh;
@@ -341,25 +346,53 @@ width:60%;
   margin: 7% 2% 5% 2%;
   box-shadow: 3px 10px 32px 17px rgba(0,0,0,0.54)
 }
+.userTextBox .textbox{
+  margin: 15% 5%;
+  top: 15vh;
+  position: sticky;
+  width: 40vw;
+}
+.userTextBox {
+  /* background-color: white; */
+}
+
+.opponent{
+  margin-top: 10vh;
+  /* max-height: 10vh; */
+  /* background-color: white ; */
+  width: 50%;
+}
 .opponentsheading {
   background-color: gray;
   box-shadow: 0px 9px 22px 7px rgba(0,0,0,0.61);
   border-radius: 10px;
   margin: 5% 15% -5% 15%;
   padding: 10px;
+  top: 8vh;
+  position: sticky;
 }
 
 .opponentsbox {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  flex-direction: column;
   margin: 1%;
+  /* justify-content: space-around; */
+  /* flex-wrap: wrap; */
+  /* align-items: stretch; */
   /* max-width: 50%; */
 }
 .opponentsbox .textbox {
-  max-width: 30%;
-  height: 10%;
+  max-width: 40%;
   background-color: lightgray;
 }
+.opponentsbox {
+  width: 100%;
+}
 
+.cardInRoom{
+  margin: 10%;
+}
+.b-card {
+  box-shadow: 0px 9px 22px 7px rgba(0,0,0,0.61) !important;
+}
 </style>

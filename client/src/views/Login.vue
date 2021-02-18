@@ -7,7 +7,7 @@
       <!-- Tabs Titles -->
       <!-- Icon -->
       <div class="fadeIn first">
-        <img src="../assets/smashed1.jpg" id="icon" alt="User Icon" />
+        <img src="../assets/smash.gif" id="icon" alt="User Icon" />
       </div>
       <!-- Username Form -->
       <form>
