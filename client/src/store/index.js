@@ -8,12 +8,16 @@ export default new Vuex.Store({
     isLoggedIn: false
   },
   mutations: {
+    isLogin (state, payload) {
+      state.isLoggedIn = payload
+    }
   },
   actions: {
+    login (context, payload) {
+      localStorage.setItem('username', payload.username)
+      context.commit('isLogin', true)
+    }
   },
   modules: {
-    login (context, payload) {
-      localStorage.setItem('username', payload)
-    }
   }
 })
