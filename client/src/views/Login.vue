@@ -12,8 +12,8 @@
 
       <!-- Login Form -->
       <form>
-        <input type="text" id="login" class="fadeIn second" name="login" placeholder="Enter Username">
-        <input type="submit" class="fadeIn fourth" value="Start Smashing!">
+        <input type="text" id="login" class="fadeIn second" name="login" placeholder="Enter Username" v-model="login.username">
+        <input type="submit" class="fadeIn fourth" value="Start Smashing!" @click.prevent="loginBtn()">
       </form>
 
     </div>
@@ -23,7 +23,14 @@
 <script>
 /* eslint-disable eol-last */
 export default {
-
+  data () {
+    
+  },
+  methods: {
+    loginBtn () {
+      this.$store.dispatch('login', {username:})
+    }
+  }
 }
 </script>
 
