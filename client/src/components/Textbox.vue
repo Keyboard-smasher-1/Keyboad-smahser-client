@@ -4,7 +4,7 @@
     <div class="container">
       <form action="#" class="form-group">
         <div class="form-group">
-        <label for="exampleFormControlTextarea1">{{username}}</label>
+        <label for="exampleFormControlTextarea1">{{user}}</label>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="11" cols="30" placeholder="type as fast as you can!"  v-model="types" @input="sendTyping()" ></textarea>
       </div>
       </form>
@@ -14,13 +14,14 @@
 
 <script>
 /* eslint-disable eol-last */
-
+import Swal from 'sweetalert2'
 export default {
   props: ['username'],
   data () {
     return {
       text: '',
-      types: ''
+      types: '',
+      user: localStorage.username
     }
   },
   sockets: {
@@ -29,14 +30,46 @@ export default {
     },
     serverTyping (typing) {
       console.log('------ dari server', typing)
+    },
+    serverUserWinner (data) {
+      let timerInterval
+      Swal.fire({
+        title: 'Winner',
+        html: 'I will close in <b></b> milliseconds.',
+        timer: 1000,
+        timerProgressBar: true,
+        didOpen: () => {
+          Swal.showLoading()
+          timerInterval = setInterval(() => {
+            const content = Swal.getContent()
+            if (content) {
+              const b = content.querySelector('b')
+              if (b) {
+                b.textContent = Swal.getTimerLeft()
+              }
+            }
+          }, 100)
+        },
+        willClose: () => {
+          clearInterval(timerInterval)
+        }
+      }).then((result) => {
+        /* Read more about handling dismissals below */
+        this.types = ''
+        this.$store.commit('liveTyping', '')
+      })
+    },
+    enemyText (data) {
+      this.$store.commit('liveTyping', data)
     }
   },
   methods: {
     sendTyping () {
       if (this.types.length !== 10) {
         this.$socket.emit('newTyping', this.types)
+        this.$socket.emit('shareTyping', this.types)
       } else if (this.types.length === 10) {
-        console.log('winner')
+        this.$socket.emit('UserWinner', this.username)
       }
     }
   }

@@ -10,9 +10,9 @@
             <b-nav-item-dropdown right>
               <!-- Using 'button-content' slot -->
               <template #button-content>
-                <em>{{username}}</em>
+                <em>{{user}}</em>
               </template>
-              <b-dropdown-item href="#" @click.prevent="logoutBtn()">Logout</b-dropdown-item>
+              <b-dropdown-item href="#" @click.prevent="logoutBtn()" >Logout</b-dropdown-item>
             </b-nav-item-dropdown>
           </b-navbar-nav>
         </b-collapse>
@@ -28,14 +28,16 @@ export default {
   name: 'App',
   data () {
     return {
-      // username: localStorage.getItem('username')
+      user: localStorage.username
     }
-  },
-  components: {
   },
   methods: {
     logoutBtn () {
+      this.$socket.emit('removeUser', localStorage.username)
       this.$store.dispatch('logout')
+      if (this.$store.state.userServer >= 0) {
+        this.$store.commit('decrementUserServer')
+      }
     }
   },
   computed: {
@@ -351,9 +353,6 @@ width:60%;
   top: 15vh;
   position: sticky;
   width: 40vw;
-}
-.userTextBox {
-  /* background-color: white; */
 }
 
 .opponent{
