@@ -5,7 +5,9 @@
       <form action="#" class="form-group">
         <div class="form-group">
         <label for="Textarea1">{{user}}</label>
-        <textarea class="form-control" id="Textarea1" rows="11" cols="30" placeholder="type as fast as you can!, enter 100 characters to win the game"  v-model="types" @input="sendTyping()" ></textarea>
+        <h6>Your character count: {{this.types.length}}</h6>
+        <textarea class="form-control" id="Textarea1" rows="11" cols="30" placeholder="type as fast as you can!, enter 100 characters to win the game"  v-model="types" @input="sendTyping()" v-if="start === true"></textarea>
+        <textarea class="form-control" id="Textarea1" rows="11" cols="30" placeholder="Click start button to play"  v-model="types" @input="sendTyping()" v-if="start === false" disabled></textarea>
       </div>
       </form>
     </div>
@@ -21,7 +23,8 @@ export default {
     return {
       text: '',
       types: '',
-      user: localStorage.username
+      user: localStorage.username,
+      start: false
     }
   },
   sockets: {
@@ -36,7 +39,7 @@ export default {
       Swal.fire({
         title: 'The Winner Is ' + data + '!',
         html: 'game will restart in <b></b> milliseconds.',
-        timer: 10000,
+        timer: 3000,
         timerProgressBar: true,
         didOpen: () => {
           Swal.showLoading()
@@ -61,6 +64,34 @@ export default {
     },
     enemyText (data) {
       this.$store.commit('liveTyping', data)
+    },
+    countingGame (data) {
+      this.start = true
+      let timerInterval
+      Swal.fire({
+        title: 'get ready',
+        html: 'game will start in <b></b> milliseconds.',
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: () => {
+          Swal.showLoading()
+          timerInterval = setInterval(() => {
+            const content = Swal.getContent()
+            if (content) {
+              const b = content.querySelector('b')
+              if (b) {
+                b.textContent = Swal.getTimerLeft()
+              }
+            }
+          }, 100)
+        },
+        willClose: () => {
+          clearInterval(timerInterval)
+        }
+      }).then((result) => {
+        /* Read more about handling dismissals below */
+        this.start = true
+      })
     }
   },
   methods: {

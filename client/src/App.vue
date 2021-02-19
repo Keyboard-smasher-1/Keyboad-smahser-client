@@ -3,6 +3,7 @@
     <div>
       <b-navbar toggleable="lg" type="dark" variant="info" v-if="login" fixed="top">
         <b-navbar-brand>Keyboard Smasher</b-navbar-brand>
+        <button @click.prevent="startBtn" class="btn btn-danger" id="buttonStart">Start</button>
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
         <b-collapse id="nav-collapse" is-nav>
             <b-navbar-nav class="ml-auto">
@@ -30,6 +31,10 @@ export default {
       if (this.$store.state.userServer >= 0) {
         this.$store.commit('decrementUserServer')
       }
+    },
+
+    startBtn () {
+      this.$socket.emit('startGame', 3)
     }
   },
   computed: {
@@ -72,6 +77,12 @@ export default {
 /* html {
 background-color: #56baed;
 } */
+
+#buttonStart {
+  position: relative;
+  left: 40%
+}
+
 body {
 font-family: "Poppins", sans-serif;
 background-image: url('./assets/background.png');
