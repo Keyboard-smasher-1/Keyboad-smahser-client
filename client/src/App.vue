@@ -358,7 +358,7 @@ width:60%;
   background-color: gray;
   box-shadow: 0px 9px 22px 7px rgba(0,0,0,0.61);
   border-radius: 10px;
-  margin: 5% 15% -5% 15%;
+  margin-bottom: 5%;
   padding: 10px;
   top: 8vh;
   position: sticky;
@@ -370,8 +370,10 @@ width:60%;
   margin: 1%;
 }
 .opponentsbox .textbox {
+  margin: 0 auto;
   width: 50%;
   background-color: lightgray;
+  margin-bottom: 5%;
 }
 .opponentsbox {
   width: 100%;
