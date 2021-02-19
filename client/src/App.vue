@@ -5,19 +5,9 @@
         <b-navbar-brand>Keyboard Smasher</b-navbar-brand>
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
         <b-collapse id="nav-collapse" is-nav>
-          <!-- Right aligned nav items -->
-          <b-navbar-nav class="ml-auto">
-            <!-- <b-nav-item-dropdown right> -->
-              <!-- Using 'button-content' slot -->
-              <!-- <template #button-content>
-                <em>{{user}}</em>
-              </template> -->
-              <!-- <b-dropdown-item href="#" @click.prevent="logoutBtn()" >Logout</b-dropdown-item> -->
-            <!-- </b-nav-item-dropdown> -->
             <b-navbar-nav class="ml-auto">
               <b-nav-item href="#" @click.prevent="logoutBtn()">Logout</b-nav-item>
             </b-navbar-nav>
-          </b-navbar-nav>
         </b-collapse>
       </b-navbar>
     </div>
@@ -26,7 +16,6 @@
 </template>
 
 <script>
-// import Login from './views/Login.vue'
 export default {
   name: 'App',
   data () {
@@ -330,11 +319,6 @@ outline: none;
 width:60%;
 }
 
-/* textarea{
-  border: 2px inset blue;
-  border-radius: 10px;
-} */
-
 /* textbox component style */
 .align-container{
   display: flex;
@@ -343,9 +327,6 @@ width:60%;
 }
 .textbox{
   background-color: #aee1e1;
-  /* height: 100vh;
-  width: 100vw; */
-  /* margin-top: 5%; */
   border-radius: 10px;
   padding: 10px;
   margin: 7% 2% 5% 2%;
@@ -360,8 +341,6 @@ width:60%;
 
 .opponent{
   margin-top: 10vh;
-  /* max-height: 10vh; */
-  /* background-color: white ; */
   width: 50%;
 }
 .opponentsheading {
@@ -378,13 +357,9 @@ width:60%;
   display: flex;
   flex-direction: column;
   margin: 1%;
-  /* justify-content: space-around; */
-  /* flex-wrap: wrap; */
-  /* align-items: stretch; */
-  /* max-width: 50%; */
 }
 .opponentsbox .textbox {
-  max-width: 40%;
+  width: 50%;
   background-color: lightgray;
 }
 .opponentsbox {

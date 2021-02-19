@@ -16,7 +16,6 @@
 /* eslint-disable eol-last */
 export default {
   props: ['username'],
-
   computed: {
     enemyTyping () {
       return this.$store.state.typing
