@@ -12,8 +12,11 @@
               <!-- <template #button-content>
                 <em>{{user}}</em>
               </template> -->
-              <b-dropdown-item href="#" @click.prevent="logoutBtn()" >Logout</b-dropdown-item>
+              <!-- <b-dropdown-item href="#" @click.prevent="logoutBtn()" >Logout</b-dropdown-item> -->
             <!-- </b-nav-item-dropdown> -->
+            <b-navbar-nav class="ml-auto">
+              <b-nav-item href="#" @click.prevent="logoutBtn()">Logout</b-nav-item>
+            </b-navbar-nav>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>

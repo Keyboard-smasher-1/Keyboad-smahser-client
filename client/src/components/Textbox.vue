@@ -34,9 +34,9 @@ export default {
     serverUserWinner (data) {
       let timerInterval
       Swal.fire({
-        title: 'The Winner Is ' + data,
+        title: 'The Winner Is ' + data + '!',
         html: 'game will restart in <b></b> milliseconds.',
-        timer: 5000,
+        timer: 10000,
         timerProgressBar: true,
         didOpen: () => {
           Swal.showLoading()
