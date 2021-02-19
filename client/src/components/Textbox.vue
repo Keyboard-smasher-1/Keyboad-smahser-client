@@ -35,11 +35,13 @@ export default {
       console.log('------ dari server', typing)
     },
     serverUserWinner (data) {
+      this.start = false
       let timerInterval
       Swal.fire({
+        allowOutsideClick: false,
         title: 'The Winner Is ' + data + '!',
         html: 'game will restart in <b></b> milliseconds.',
-        timer: 3000,
+        timer: 5000,
         timerProgressBar: true,
         didOpen: () => {
           Swal.showLoading()
@@ -66,12 +68,14 @@ export default {
       this.$store.commit('liveTyping', data)
     },
     countingGame (data) {
+      this.types = ''
       this.start = true
       let timerInterval
       Swal.fire({
+        allowOutsideClick: false,
         title: 'get ready',
         html: 'game will start in <b></b> milliseconds.',
-        timer: 3000,
+        timer: 4000,
         timerProgressBar: true,
         didOpen: () => {
           Swal.showLoading()
