@@ -5,7 +5,7 @@
     </div>
     <div class="opponent">
         <div class="opponentsheading">
-        <h3>Opponents Progress</h3>
+        <h3>Player on room</h3>
       </div>
       <div class="opponentsbox">
         <textbox-opponent v-for="username in filter" :key="username.id" :username="username"/>

@@ -21,7 +21,7 @@
 <script>
 /* eslint-disable eol-last */
 
-import Swal from 'sweetalert2'
+// import Swal from 'sweetalert2'
 export default {
   data () {
     return {
@@ -30,16 +30,16 @@ export default {
   },
   methods: {
     loginBtn () {
-      if (this.userServer < 2) {
-        this.$socket.emit('newUser', this.username)
-        this.$store.dispatch('login', { username: this.username }).then(_ => { this.$router.push('/game') })
-      } else {
-        Swal.fire({
-          title: 'User Full',
-          text: 'The room is full',
-          icon: 'error'
-        })
-      }
+      // if (this.userServer < 2) {
+      this.$socket.emit('newUser', this.username)
+      this.$store.dispatch('login', { username: this.username }).then(_ => { this.$router.push('/game') })
+      // } else {
+      //   Swal.fire({
+      //     title: 'User Full',
+      //     text: 'The room is full',
+      //     icon: 'error'
+      //   })
+      // }
     }
   },
 

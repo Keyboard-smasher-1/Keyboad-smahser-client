@@ -1,14 +1,14 @@
 <template>
   <div class="textbox container">
     <h1>{{username}}</h1>
-    <div class="container">
+    <!-- <div class="container">
       <form action="#" class="form-group">
         <div class="form-group">
         <label for="Textarea2"></label>
-        <textarea class="form-control" id="Textarea2" rows="11" cols="30" placeholder="opponent is typing!" :value='enemyTyping' disabled></textarea>
+        <textarea class="form-control" id="Textarea2" rows="11" cols="10" placeholder="opponent is typing!" disabled></textarea>
       </div>
       </form>
-    </div>
+    </div> -->
   </div>
 </template>
 
