@@ -1,11 +1,11 @@
 <template>
   <div class="textbox container">
-    <h1>Start Typing!</h1>
+    <h1>{{username}}</h1>
     <div class="container">
       <form action="#" class="form-group">
         <div class="form-group">
-        <label for="exampleFormControlTextarea1">{{username}}</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="11" cols="30" placeholder="type as fast as you can!" :value='enemyTyping' disabled></textarea>
+        <label for="Textarea2"></label>
+        <textarea class="form-control" id="Textarea2" rows="11" cols="30" placeholder="opponent is typing!" :value='enemyTyping' disabled></textarea>
       </div>
       </form>
     </div>

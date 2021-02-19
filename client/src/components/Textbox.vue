@@ -4,8 +4,8 @@
     <div class="container">
       <form action="#" class="form-group">
         <div class="form-group">
-        <label for="exampleFormControlTextarea1">{{user}}</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="11" cols="30" placeholder="type as fast as you can!"  v-model="types" @input="sendTyping()" ></textarea>
+        <label for="Textarea1">{{user}}</label>
+        <textarea class="form-control" id="Textarea1" rows="11" cols="30" placeholder="type as fast as you can!, enter 100 characters to win the game"  v-model="types" @input="sendTyping()" ></textarea>
       </div>
       </form>
     </div>
@@ -34,9 +34,9 @@ export default {
     serverUserWinner (data) {
       let timerInterval
       Swal.fire({
-        title: 'Winner',
-        html: 'I will close in <b></b> milliseconds.',
-        timer: 1000,
+        title: 'The Winner Is ' + data,
+        html: 'game will restart in <b></b> milliseconds.',
+        timer: 5000,
         timerProgressBar: true,
         didOpen: () => {
           Swal.showLoading()
@@ -65,11 +65,11 @@ export default {
   },
   methods: {
     sendTyping () {
-      if (this.types.length !== 10) {
+      if (this.types.length !== 100) {
         this.$socket.emit('newTyping', this.types)
         this.$socket.emit('shareTyping', this.types)
-      } else if (this.types.length === 10) {
-        this.$socket.emit('UserWinner', this.username)
+      } else if (this.types.length === 100) {
+        this.$socket.emit('UserWinner', this.user)
       }
     }
   }

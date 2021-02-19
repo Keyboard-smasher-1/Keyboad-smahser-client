@@ -11,7 +11,7 @@
       </div>
       <!-- Username Form -->
       <form>
-        <input type="text" id="login" class="fadeIn second" name="login" placeholder="Enter Username" v-model="username">
+        <input type="text" id="login" class="fadeIn second" name="login" placeholder="Enter Username" v-model="username" required>
         <input type="submit" class="fadeIn fourth" value="Start Smashing!" @click.prevent="loginBtn()">
       </form>
     </div>
