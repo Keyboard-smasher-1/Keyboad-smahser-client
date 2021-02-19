@@ -7,7 +7,6 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     isLoggedIn: localStorage.getItem('username') || false,
-    username: localStorage.getItem('username'),
     typing: '',
     userServer: 0
   },
@@ -16,16 +15,16 @@ export default new Vuex.Store({
       state.isLoggedIn = payload
     },
     liveTyping (state, payload) {
-      console.log(payload, 'mutations')
+      // console.log(payload, 'mutations')
       state.typing = payload
     },
     setUserServer (state) {
       state.userServer++
     },
     decrementUserServer (state) {
-      console.log(state.userServer)
+      // console.log(state.userServer)
       state.userServer--
-      console.log(state.userServer)
+      // console.log(state.userServer)
     }
   },
   actions: {
@@ -39,7 +38,7 @@ export default new Vuex.Store({
       router.push('/')
     },
     SOCKETenemyText (context, text) {
-      console.log(text, 'ini di actions')
+      // console.log(text, 'ini di actions')
       context.commit('liveTyping', text)
     },
     SOCKETfullUser (context, message) {
